@@ -413,7 +413,7 @@ progress {
       font-size: 2rem;
     }
     .btn-start{
-      font-size: 1.4rem;
+      font-size: 1.6rem;
     }
   }
 
@@ -467,25 +467,25 @@ progress {
 }
 @media screen and (max-width: 440px) {
   .app-header{
-    margin-bottom: 3rem;
-    gap: 0.5rem;
+    margin-bottom: 5rem;
+    gap: 1rem;
     justify-content: center;
     h1{
-      font-size: 2.6rem;
+      font-size: 3rem;
     }
     img{
-      height: 6rem;
-      width: 6rem;
+      height: 7rem;
+      width: 7rem;
     }
   }
   .start{
     h2{
-      width: 50%;
+      width: 70%;
       text-align: center;
       margin-bottom: 5rem;
     }
     h3{
-      width: 50%;
+      width: 60%;
       text-align: center;
       margin-bottom: 5rem;
     }
@@ -493,26 +493,26 @@ progress {
 
   .question{
     h4{
-      width: 50%;
-      margin: auto;
-      margin-bottom: 2rem
+      width: 65%;
+      text-align: center;
+      margin-bottom: 3rem
     }
   }
 
   .btn-ui{
     float: left;
-    margin-left: 11rem;
-    font-size: 1.4rem;
+    margin-left: 14rem;
+    font-size: 1.6rem;
   }
 
   .timer{
-    margin-left: 11rem;
-    font-size: 1.4rem;
+    margin-left: 9rem;
+    font-size: 1.6rem;
   }
 
   .btn-option{
-    font-size: 1.4rem;
-    width: 52%;
+    font-size: 1.6rem;
+    width: 60%;
     margin: auto;
     display: flex;
     /* justify-content: center; */
@@ -523,17 +523,17 @@ progress {
   .result{
     padding: 1.4rem 0;
     font-size: 1.6rem;
-    width: 55%;
+    width: 60%;
     margin: auto;
     margin-bottom: 5rem;
     margin-top: 2rem;
   }
   .highscore {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-bottom: 5rem;
   }
   .btn-restart{
-    font-size: 1.4rem;
-    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    padding: 1.5rem 2rem;
   }
 }
