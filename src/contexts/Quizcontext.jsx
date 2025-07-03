@@ -133,22 +133,23 @@ const getSavedState = () => {
   return saved ? JSON.parse(saved) : null;
 };
 
-const savedState = getSavedState();
-
-const initialState = savedState
-  ? {
-      ...savedState,
-      status: "resume-prompt", // resume quiz if it was in progress
-    }
-  : {
-      questions: [],
-      status: "loading",
-      index: 0,
-      answer: null,
-      points: 0,
-      highscore: Number(localStorage.getItem("highscore")) || 0,
-      secondsRemaining: null,
-    };
+const getInitialState = () => {
+  const savedState = getSavedState();
+  return savedState
+    ? {
+        ...savedState,
+        status: "resume-prompt", // resume quiz if it was in progress
+      }
+    : {
+        questions: [],
+        status: "loading",
+        index: 0,
+        answer: null,
+        points: 0,
+        highscore: Number(localStorage.getItem("highscore")) || 0,
+        secondsRemaining: null,
+      };
+};
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -215,7 +216,7 @@ const reducer = (state, action) => {
     case "restart":
       localStorage.removeItem("quizState"); // cleanup
       return {
-        ...initialState,
+        ...getInitialState(),
         questions: state.questions,
         status: "ready",
         highscore: state.highscore, // preserve highscore
@@ -258,7 +259,7 @@ const QuizProvider = ({ children }) => {
   const [
     { questions, status, index, answer, points, highscore, secondsRemaining },
     dispatch,
-  ] = useReducer(reducer, initialState);
+  ] = useReducer(reducer, null, getInitialState);
 
   const numQuestions = questions.length;
   const maxPossiblePoints = questions.reduce(
